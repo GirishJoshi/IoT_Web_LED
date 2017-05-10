@@ -1,11 +1,12 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid = "Android-AP";
-const char* password = "qwertyuiop123";
+const char* ssid = ""; // Enter your ssid - WiFi's Name
+const char* password = ""; // Leave blank for open WiFi
 
-const char* host = "api.thingspeak.com";
-const char* path = "apps/thinghttp/send_request?api_key=BF0Y38ALK9R1W4FS";
-
+// WebApp Link: https://iot-tinkering.000webhostapp.com/
+// Accessing Data from: https://iot-tinkering.000webhostapp.com/light.txt
+const char* host = "iot-tinkering.000webhostapp.com";
+const char* path = "light.txt";
 
 void setup()
 {
@@ -26,6 +27,7 @@ void setup()
     Serial.print(".");
   }
   
+  // To indicate that you are connected to WiFi
   for(int i = 0; i < 5; i++){
     digitalWrite(D0, HIGH);
     delay(100);
